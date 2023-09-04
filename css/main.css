@@ -1,0 +1,174 @@
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Medium-Grey: hsl(216, 12%, 54%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+  --gradient: linear-gradient(
+    to bottom,
+    hsl(215, 20%, 17%),
+    hsl(215, 24%, 12%)
+  );
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: "Overpass", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--Very-Dark-Blue);
+}
+h1 {
+  color: var(--White);
+  font-size: 28px;
+}
+p {
+  color: var(--Light-Grey);
+  line-height: 1.6;
+}
+.text-center {
+  text-align: center;
+}
+main {
+  background-image: var(--gradient);
+  max-width: 412px;
+  width: 100%;
+  border-radius: 30px;
+  padding: 32px;
+}
+main img {
+  width: 48px;
+  height: 48px;
+  background-color: var(--Dark-Blue);
+  padding: 16px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+main h1 {
+  margin-bottom: 10px;
+}
+main p {
+  margin-bottom: 25px;
+}
+main form .rating_group {
+  display: flex;
+  justify-content: space-between;
+}
+main form input {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+}
+main form input:checked + .control {
+  background-color: var(--Medium-Grey);
+  color: var(--White);
+}
+main form label .control {
+  display: block;
+  background-color: var(--Dark-Blue);
+  color: var(--Medium-Grey);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main form button {
+  background-color: var(--Orange);
+  border: none;
+  color: var(--White);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  height: 45px;
+  border-radius: 45px;
+  width: 100%;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main form button:hover {
+  background-color: var(--White);
+  color: var(--Orange);
+  outline: none;
+}
+label:hover .control,
+label input:focus + .control {
+  background-color: var(--Orange);
+  color: var(--White);
+}
+.illustration {
+  background: none;
+  padding: 0;
+  border: none;
+  width: 140px;
+  height: 160px;
+  border-radius: 0;
+  margin-left: 95px;
+  margin-bottom: 20px;
+}
+.rating-result {
+  background-color: var(--Dark-Blue);
+  color: var(--Orange);
+  height: 32px;
+  border-radius: 32px;
+  line-height: 5px;
+  width: max-content;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.animate-out {
+  animation: animate-out 0.5s ease-out both;
+}
+.animate-in {
+  animation: animate-in 0.5s ease-out both;
+}
+@keyframes animate-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    translate: -3rem;
+  }
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    translate: 3rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    max-width: 340px;
+  }
+  main p {
+    font-size: 14px;
+  }
+  .illustration {
+    margin-left: 60px;
+  }
+}
